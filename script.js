@@ -51,7 +51,7 @@ function displaySidebar(cartItem) {
 }
 
 function closeSidebar() {
-  document.getElementById("mySidenav").style.width = "0";
+  document.getElementById("cart-sidebar").style.width = "0";
   sidebar.boxShadow = "none"
 }
 
