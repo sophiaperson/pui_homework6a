@@ -108,8 +108,6 @@ button:hover {
 }
 
 .product-grid {
-  border-radius: 15px;
-  border: 2px solid transparent;
   position: relative;
   grid-template-rows: 80% 20%;
   height: 300px;
@@ -119,7 +117,7 @@ button:hover {
 }
 
 .product-grid:hover {
-  border: 2px solid #ddd;
+  box-shadow: 10px 10px 10px lightgray;
 }
 
 .product-img-container {
@@ -455,7 +453,7 @@ button:hover {
   overflow-x: hidden;
   transition: 0.5s;
   padding-top: 60px;
-  box-shadow: -100px 0px 200px gray;
+  box-shadow: -100px 0px 200px lightgray;
 }
 
 .sidebar-content {
