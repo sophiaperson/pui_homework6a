@@ -1,4 +1,6 @@
 // script.js
+
+sessionStorage.setItem("cartItems", [])
 const cartItems = []
 
 class CartItem {
@@ -38,17 +40,11 @@ function addItemToCart() {
   return cartItem;
 }
 
-function displayCartPopUp(cartItem) {
-  let popup = document.getElementById("cart-popup")
-  popup.style.visibility = "visible"
-  let size = capitalizeFirstLetter(cartItem.size)
-  let color = capitalizeFirstLetter(cartItem.color)
-  let quantity = cartItem.quantity
-  let name = cartItem.name
-  let price = cartItem.price 
-  message = ""
-  message = size + " " + color + " " + name + " x" + quantity.toString() + " added to cart!"
-  document.getElementById("cart-popup-body").innerHTML = message
+function displayCartModal(cartItem) {
+  let modal = document.getElementById("cart-modal")
+  modal.style.display = "block"
+  let message = document.getElementById("cart-message")
+  message.innerHTML = "You added an item to your cart!"
 }
 
 function displayCartNotification() {
@@ -56,12 +52,11 @@ function displayCartNotification() {
   let notification = document.getElementById("cart-notification")
   notification.innerHTML = numItems.toString()
   notification.style.visibility = "visible"
-  document.getElementsByClassName('close')[0].style.visibility = "visible"
 }
 
 function addToCart() {
   let cartItem = addItemToCart()
-  displayCartPopUp(cartItem)
+  displayCartModal(cartItem)
   displayCartNotification()
 }
 
@@ -97,11 +92,6 @@ function mouseOutColor() {
   }
   color = color.charAt(0).toUpperCase() + color.slice(1)
   document.getElementById("selected-color").innerHTML = color
-}
-
-function closePopup() {
-  document.getElementById("cart-popup").style.visibility = "hidden"
-  document.getElementsByClassName("close")[0].style.visibility = "hidden"
 }
 
 function capitalizeFirstLetter(str) {

@@ -5,13 +5,9 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="style.css"></link>
     <title>Muddy Paws - Adventure Gear</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Oxygen:wght@300;400;700&display=swap" rel="stylesheet"> 
   </head>
-
   <body>
     <header>
       <div id="banner-grid" class="grid-container">
@@ -31,37 +27,33 @@
           <a class="navlink" href="shop-cat.html">Shop Cat</a>
           <a class="navlink" href="contact.html">Contact</a>
           <a class="navlink" href="about.html">About</a>
-          <a class="navlink" href="cart.html">
+          <a id="cart" class="navlink" href="cart.html">
             <img id="cart-icon" width="20" height="20" src="cart-icon.svg" alt="cart icon">
+            <div id="cart-notification" style="visibility: hidden;"></div>
           </a>
         </div>
       </div>
     </header>
-    
-    <div id="home-page-grid" class="grid-container">
-      <div id="slideshow-grid" class="grid-container">
-        <div id="slideshow-container">
-          <div id="slideshow-img-container">
-            <img class="slideshow-img" src="https://images.unsplash.com/photo-1511754268731-ac0b89398b2c?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTN8fGRvZyUyMGNvbGxhcnxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=700&q=60" alt="golden retriever dog wearing pink collar">
-          </div>
 
-          <div id="welcome-msg-container">
-            <h1 id="welcome-msg">Environmentally<br>Friendly Products</h1>
-            <div>
-              <a class="link-button" href="shop-dog.html">Shop Dog</a>
-              <a class="link-button" href="shop-cat.html">Shop Cat</a>
-            </div>
-          </div>
 
-          
-
+    <div id="slideshow-grid" class="grid-container">
+      <div id="slideshow-container">
+        <div id="slideshow-img-container">
+          <img class="slideshow-img" src="https://images.unsplash.com/photo-1511754268731-ac0b89398b2c?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTN8fGRvZyUyMGNvbGxhcnxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=700&q=60" alt="golden retriever dog wearing pink collar">
         </div>
 
-        
-
+        <div id="welcome-msg-container">
+          <h1 id="welcome-msg">Environmentally<br>Friendly Products</h1>
+          <div>
+            <a class="link-button" href="shop-dog.html">Shop Dog</a>
+            <a class="link-button" href="shop-cat.html">Shop Cat</a>
+          </div>
+        </div>
       </div>
+    </div>
 
-      <div id="bestsellers-grid" class="products-grid grid-container">
+
+    <div id="bestsellers-grid" class="products-grid grid-container">
         <div id="bestsellers-header">
           <h2>Bestsellers</h2>
         </div>
@@ -194,11 +186,10 @@
             </div>
 
           
-          
+          </div>
         </div>
       </div>
-
-    </div>
+    
 
     <footer>
       <p>2021 Muddy Paws</p>
@@ -206,7 +197,7 @@
         Logo icon made by <a href="https://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a>
       </div>
     </footer>
-  </body>
 
+  </body>
 
 </html>

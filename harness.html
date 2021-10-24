@@ -41,7 +41,7 @@
     </header>
 
     <div class="categories">
-      <a href="shop-dog.html">Shop Dog</a> > <a href="harness.html">Harness</a>
+      <a href="shop-dog.html">Shop Dog</a> / <a href="harness.html">Harness</a>
     </div>
 
 
@@ -180,11 +180,16 @@
       </div>
     </div>
 
-    <div class="popup" style="visibility: hidden;">
-      <span class="close" onclick="closePopup()">&times;</span>
-      <span class="popuptext" id="cart-popup">
-        <div class="popup-body" id="cart-popup-body"></div> 
-      </span>
+    <div id="cart-modal" class="modal">
+      <div class="modal-content">
+        <span onclick="document.getElementById('cart-modal').style.display='none'">&times;</span>
+        <p id="cart-message"></p>
+        <h3>Your Cart</h3>
+        <div id="modal-cart-box">
+          <div id="modal-cart-item"></div>
+        </div>
+        <a id="start-checkout-button" href="cart.html">Checkout</a>
+      </div>
     </div>
 
     <footer>
