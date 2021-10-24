@@ -40,11 +40,19 @@ function addItemToCart() {
   return cartItem;
 }
 
-function displayCartModal(cartItem) {
-  let modal = document.getElementById("cart-modal")
-  modal.style.display = "block"
+function displaySidebar(cartItem) {
+  let sidebar = document.getElementById("cart-sidebar")
+  sidebar.boxShadow = "-200px 0px 1000px gray"
+  sidebar.style.width = "400px"
+  
   let message = document.getElementById("cart-message")
   message.innerHTML = "You added an item to your cart!"
+  
+}
+
+function closeSidebar() {
+  document.getElementById("mySidenav").style.width = "0";
+  sidebar.boxShadow = "none"
 }
 
 function displayCartNotification() {
@@ -56,7 +64,7 @@ function displayCartNotification() {
 
 function addToCart() {
   let cartItem = addItemToCart()
-  displayCartModal(cartItem)
+  displaySidebar(cartItem)
   displayCartNotification()
 }
 

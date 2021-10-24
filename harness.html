@@ -180,13 +180,15 @@
       </div>
     </div>
 
-    <div id="cart-modal" class="modal">
-      <div class="modal-content">
-        <span onclick="document.getElementById('cart-modal').style.display='none'">&times;</span>
+    <div id="cart-sidebar" class="sidebar">
+      <div class="sidebar-content">
+        <span id="close" onclick="closeSidebar()">&times;</span>
         <p id="cart-message"></p>
         <h3>Your Cart</h3>
-        <div id="modal-cart-box">
-          <div id="modal-cart-item"></div>
+        <div id="sidebar-items-box">
+          <div class="sidebar-item-grid">
+            <div class="sidebar-item-image"></div>
+          </div>
         </div>
         <a id="start-checkout-button" href="cart.html">Checkout</a>
       </div>
