@@ -185,12 +185,7 @@
       <div class="sidebar-content">
         <span id="close" onclick="closeSidebar()">&times;</span>
         <p id="cart-message"></p>
-        <h3>Your Cart</h3>
-        <div id="sidebar-items-box">
-          <div class="sidebar-item-grid">
-            <div class="sidebar-item-image"></div>
-          </div>
-        </div>
+        
         <a id="start-checkout-button" href="cart.html">Go to cart</a>
       </div>
     </div>
@@ -202,6 +197,18 @@
       </div>
     </footer>
 
+    <script type="text/javascript">
+      let itemsString = sessionStorage.getItem('cartItems')
+      let items = JSON.parse(itemsString)
+      let numItems = items.length
+      let notification = document.getElementById("cart-notification")
+      if (notification != null) {
+        if (numItems !== 0) {
+          notification.innerHTML = numItems.toString()
+          notification.style.visibility = "visible"
+        }
+      }
+    </script>
     
   </body>
 </html>

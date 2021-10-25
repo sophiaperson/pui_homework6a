@@ -1,7 +1,5 @@
 // script.js
 
-const cartItems = []
-
 function CartItem(size, color, quantity, name, price, imageUrl) {
   this.size = size
   this.color = color
@@ -33,7 +31,6 @@ function addItemToCart() {
   let price = document.getElementById("product-detail-price").innerHTML
   let imageUrl = document.getElementById("product1").src
   const cartItem = new CartItem(size, color, quantity, name, price, imageUrl)
-  cartItems.push(cartItem)
 
   console.log("Size: " + size + ", Color: " + color + ", Quantity: " + quantity + ", Name: " + name + ", Price: " + price)
   
@@ -41,7 +38,16 @@ function addItemToCart() {
   let cartArray = JSON.parse(cartString)
   cartArray.push(cartItem)
   let newCartString = JSON.stringify(cartArray)
+
+
+  console.log("old storage")
+  console.log(sessionStorage.getItem("cartItems"))
+
   sessionStorage.setItem('cartItems', newCartString)
+
+  console.log("new storage")
+  console.log(sessionStorage.getItem("cartItems"))
+
 
   return cartItem;
 }
@@ -68,19 +74,17 @@ function closeSidebar() {
 }
 
 function displayCartNotification() {
-  /*
-  let numItems = cartItems.length
-  let notification = document.getElementById("cart-notification")
-  notification.innerHTML = numItems.toString()
-  */
-
   let itemsString = sessionStorage.getItem('cartItems')
   let items = JSON.parse(itemsString)
   let numItems = items.length
   let notification = document.getElementById("cart-notification")
-  notification.innerHTML = numItems.toString()
-  notification.style.visibility = "visible"
+  if (notification != null) {
+    notification.innerHTML = numItems.toString()
+    notification.style.visibility = "visible"
+  }
+  
 }
+
 
 function addToCart() {
   let cartItem = addItemToCart()

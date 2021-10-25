@@ -130,6 +130,17 @@
       </div>
     </footer>
 
+    <script type="text/javascript">
+      let itemsString = sessionStorage.getItem('cartItems')
+      let items = JSON.parse(itemsString)
+      let numItems = items.length
+      let notification = document.getElementById("cart-notification")
+      if (notification != null) {
+        notification.innerHTML = numItems.toString()
+        notification.style.visibility = "visible"
+      }
+    </script>
+
   </body>
 
 </html>
