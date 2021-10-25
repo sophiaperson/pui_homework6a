@@ -1,16 +1,14 @@
 // script.js
 
-sessionStorage.setItem("cartItems", [])
 const cartItems = []
 
-class CartItem {
-  constructor(size, color, quantity, name, price) {
-    this.size = size
-    this.color = color
-    this.quantity = Number(quantity)
-    this.name = name
-    this.price = Number(price)
-  }
+function CartItem(size, color, quantity, name, price, imageUrl) {
+  this.size = size
+  this.color = color
+  this.quantity = quantity
+  this.name = name
+  this.price = price
+  this.imageUrl = imageUrl
 }
 
 function addItemToCart() {
@@ -33,10 +31,18 @@ function addItemToCart() {
   
   let name = document.getElementById("product-detail-title").innerHTML
   let price = document.getElementById("product-detail-price").innerHTML
-  const cartItem = new CartItem(size, color, quantity, name, price)
+  let imageUrl = document.getElementById("product1").src
+  const cartItem = new CartItem(size, color, quantity, name, price, imageUrl)
   cartItems.push(cartItem)
 
   console.log("Size: " + size + ", Color: " + color + ", Quantity: " + quantity + ", Name: " + name + ", Price: " + price)
+  
+  let cartString = sessionStorage.getItem('cartItems')
+  let cartArray = JSON.parse(cartString)
+  cartArray.push(cartItem)
+  let newCartString = JSON.stringify(cartArray)
+  sessionStorage.setItem('cartItems', newCartString)
+
   return cartItem;
 }
 
@@ -46,8 +52,14 @@ function displaySidebar(cartItem) {
   sidebar.style.width = "400px"
   
   let message = document.getElementById("cart-message")
-  message.innerHTML = "You added an item to your cart!"
   
+  let nameStr = capitalizeFirstLetter(cartItem.name)
+  let quantityStr = cartItem.quantity
+  let sizeStr = capitalizeFirstLetter(cartItem.size)
+  let colorStr = capitalizeFirstLetter(cartItem.color)
+  let itemString = nameStr + " (" + sizeStr + ", " + colorStr + ", " + quantityStr + ")"
+
+  message.innerHTML = itemString + " was added to your cart!"
 }
 
 function closeSidebar() {
@@ -56,7 +68,15 @@ function closeSidebar() {
 }
 
 function displayCartNotification() {
+  /*
   let numItems = cartItems.length
+  let notification = document.getElementById("cart-notification")
+  notification.innerHTML = numItems.toString()
+  */
+
+  let itemsString = sessionStorage.getItem('cartItems')
+  let items = JSON.parse(itemsString)
+  let numItems = items.length
   let notification = document.getElementById("cart-notification")
   notification.innerHTML = numItems.toString()
   notification.style.visibility = "visible"
@@ -106,3 +126,9 @@ function capitalizeFirstLetter(str) {
   str = str.charAt(0).toUpperCase() + str.slice(1)
   return str
 }
+
+function init() {
+  sessionStorage.setItem('cartItems', '[]')
+}
+
+init()
