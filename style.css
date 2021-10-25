@@ -629,6 +629,22 @@ button:hover {
   color: green;
 }
 
+#place-order-button {
+  font-size: 15px;
+  background-color: green;
+  color: white;
+  border: 2px solid green;
+  border-radius: 10px;
+  position: relative;
+  right: 0px;
+  padding: 10px;
+}
+
+#proceed-order-button:hover {
+  background-color: white;
+  color: green;
+}
+
 #close {
   position: absolute;
   top: 0;
