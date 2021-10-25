@@ -132,7 +132,27 @@ function capitalizeFirstLetter(str) {
 }
 
 function init() {
-  sessionStorage.setItem('cartItems', '[]')
+  if (sessionStorage.getItem('cartItems') == null) {
+    sessionStorage.setItem('cartItems', '[]')
+  }
 }
 
-init()
+function onLoad(){
+  init()
+  let itemsString = sessionStorage.getItem('cartItems')
+  let items = JSON.parse(itemsString)
+  let numItems = items.length
+  let notification = document.getElementById("cart-notification")
+  if (notification != null) {
+    if (numItems !== 0) {
+      notification.innerHTML = numItems.toString()
+      notification.style.visibility = "visible"
+    }
+  }
+  console.log(items)
+  console.log(notification.innerHTML)
+}
+
+
+
+// create onload function for each page

@@ -8,9 +8,10 @@
     <link rel="stylesheet" href="style.css"></link>
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet"> 
+    <script type="text/javascript" src="script.js"></script>
     <title>Muddy Paws - Adventure Gear</title>
   </head>
-  <body>
+  <body onload="onLoad()">
     <header>
       <div id="banner-grid" class="grid-container">
         <a id="homenav" href="index.html">
@@ -45,18 +46,6 @@
         Logo icon made by <a href="https://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a>
       </div>
     </footer>
-
-    <script type="text/javascript">
-      let itemsString = sessionStorage.getItem('cartItems')
-      let items = JSON.parse(itemsString)
-      let numItems = items.length
-      let notification = document.getElementById("cart-notification")
-      if (notification != null) {
-        notification.innerHTML = numItems.toString()
-        notification.style.visibility = "visible"
-      }
-    </script>
-
   </body>
 
 </html>
