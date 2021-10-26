@@ -419,24 +419,14 @@ button:hover {
 }
 
 
-/* The Close Button */
 .close {
-  visibility: hidden;
-  position: relative;
-  display: inline-block;
-  color: #aaa;
-  top: 0px;
-  left: 180px;
-  font-size: 20px;
-  font-weight: bold;
-  z-index: 1;
+  font-size: 25px;
+  color: black;
 }
 
-.close:hover,
-.close:focus {
-  color: black;
-  text-decoration: none;
-  cursor: pointer;
+.close:hover {
+  color: gray;
+  cursor: pointer
 }
 
 .sidebar {
@@ -476,7 +466,142 @@ button:hover {
   width: 100%;
 }
 
+.cart-item-image {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+}
 
+.cart-items-flex {
+  flex-direction: column;
+}
+
+.cart-item-grid {
+  grid-template-columns: 10% 25% 25% 25% auto;
+  border-bottom: 2px solid black;
+  padding-bottom: 20px;
+  padding-top: 10px;
+}
+
+.cart-item-details {
+
+}
+
+.cart-item-name {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.cart-item-close {
+
+}
+
+.cart-item-price {
+
+}
+
+.cart-item-quantity {
+
+}
+
+.cart-item-size-grid {
+
+}
+
+.cart-item-color-grid {
+
+}
+
+
+.cart-total-container-labels, .cart-total-container-values {
+  font-size: 20px;
+}
+
+.cart-total-container-values div {
+  text-align: end;
+}
+
+.cart-total {
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.cart-total-flex {
+  padding-top: 50px;
+  flex-direction: row;
+  justify-content: end;
+}
+
+/* Starter code for custom radio button obtained from https://www.w3schools.com/howto/howto_css_custom_checkbox.asp */
+/* The container */
+.cart-selection-grid .container {
+  display: inline-block;
+  position: relative;
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Hide the browser's default radio button */
+.cart-selection-grid .container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  font-size: 0px;
+}
+
+/* Create a custom radio button */
+.cart-selection-grid .checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 20px;
+  width: 20px;
+  background-color: #eee;
+}
+
+/* On mouse-over, darken element */
+.cart-selection-grid .container:hover input ~ .checkmark {
+  /*background-color: #ccc;*/
+  filter: brightness(0.5);
+}
+
+.cart-selection-grid .container input:checked ~ .checkmark {
+}
+
+/* Create the indicator (the dot/circle - hidden when not checked) */
+.cart-selection-grid .checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the indicator (dot/circle) when checked */
+.cart-selection-grid .container input:checked ~ .checkmark:after {
+  display: inline-block;
+}
+
+/* Style the indicator (dot/circle) */
+.cart-selection-grid .container .checkmark:after {
+  top: 0px;
+  left: 0px;
+  width: 16px;
+  height: 16px;
+  border: 2px solid black;
+}
+
+.cart-selection-grid select {
+  text-align: center;
+  width: 75px;
+  height: 30px;
+  border: 2px solid #ddd;
+  border-radius: 10px;
+  margin-top: 5px;
+}
 
 #slideshow-grid {
   width: 100%;
@@ -569,14 +694,14 @@ button:hover {
 
 
 #cart-notification {
-  background-color: green;
+  background-color: #00994d;
   color: white;
   width: 10px;
   height: 10px;
   font-size: 7px;
   text-align: center;
   display: inline-block;
-  border: 2px solid green;
+  border: 2px solid #00994d;
   border-radius: 50%;
   position: relative;
   left: -5px;
@@ -585,7 +710,7 @@ button:hover {
 
 #cart-notification:hover {
   color: white;
-  background-color: green;
+  background-color: #00994d;
 }
 
 #product-detail-title {
@@ -599,9 +724,9 @@ button:hover {
 
 #start-checkout-button {
   font-size: 15px;
-  background-color: green;
+  background-color: #00994d;
   color: white;
-  border: 2px solid green;
+  border: 2px solid #00994d;
   border-radius: 10px;
   position: relative;
   right: 0px;
@@ -610,30 +735,31 @@ button:hover {
 
 #start-checkout-button:hover {
   background-color: white;
-  color: green;
+  color: #00994d;
 }
 
 #proceed-checkout-button {
   font-size: 15px;
-  background-color: green;
+  background-color: #00994d;
   color: white;
-  border: 2px solid green;
+  border: 2px solid #00994d;
   border-radius: 10px;
   position: relative;
-  right: 0px;
+  float: right;
   padding: 10px;
+  margin-top: 20px;
 }
 
 #proceed-checkout-button:hover {
   background-color: white;
-  color: green;
+  color: #00994d;
 }
 
 #place-order-button {
   font-size: 15px;
-  background-color: green;
+  background-color: #00994d;
   color: white;
-  border: 2px solid green;
+  border: 2px solid #00994d;
   border-radius: 10px;
   position: relative;
   right: 0px;
@@ -642,7 +768,7 @@ button:hover {
 
 #proceed-order-button:hover {
   background-color: white;
-  color: green;
+  color: #00994d;
 }
 
 #close {
@@ -650,8 +776,14 @@ button:hover {
   top: 0;
   right: 25px;
   font-size: 25px;
+  color: black;
 }
 
 #close:hover {
-  cursor: pointer
+  cursor: pointer;
+  color: gray;
+}
+
+#cart-container {
+  padding: 50px;
 }

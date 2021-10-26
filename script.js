@@ -131,13 +131,18 @@ function capitalizeFirstLetter(str) {
   return str
 }
 
+function displayCartItem(item) {
+  let itemGrid = document.createElement("div")
+  itemGrid.classList.append("grid-container")
+}
+
 function init() {
   if (sessionStorage.getItem('cartItems') == null) {
     sessionStorage.setItem('cartItems', '[]')
   }
 }
 
-function onLoad(){
+function onLoad() {
   init()
   let itemsString = sessionStorage.getItem('cartItems')
   let items = JSON.parse(itemsString)
@@ -152,7 +157,3 @@ function onLoad(){
   console.log(items)
   console.log(notification.innerHTML)
 }
-
-
-
-// create onload function for each page
